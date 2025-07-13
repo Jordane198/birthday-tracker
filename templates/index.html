@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+<a href="{{ url_for('add')}}">+ Add Birthday</a>
+<ul>
+    {% for b in birthdays %}
+     <li>
+            <strong>{{ b.name }}</strong> - {{ b.birthday }}
+            ({{ calculate_age (b.birthday)}}  years old)
+            <br>
+            <br>
+            {{ b.notes }}
+            <br>
+            <br>
+            <a class="delete-button" href="{{ url_for('delete', birthday_id=b.id) }}">❌ delete</a>
+            <a class="edit-button"  href="{{ url_for('edit', birthday_id=b.id) }}">✏️ Edit</a> 
+            
+
+     </li>
+    {% else %}
+      <li>No birthdays yet!</li>
+    {% endfor %}
+</ul>
+{% endblock %}

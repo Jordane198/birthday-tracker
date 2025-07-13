@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+<h2 class="add-title"> Add Birthday</h2>
+<form method="POST" class="add-form">
+    <label > Name:</label><br>
+    <input type="text" name="name" required><br><br>
+    <label >Birthday:</label><br>
+    <input type="date" name="birthday" required><br><br>
+    <label >Notes(Optional):</label><br>
+    <textarea name="notes" ></textarea><br><br>
+    <button class="add-button" type="submit">Add</button>
+</form>
+<a href="{{ url_for('index') }}">← Back</a>
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Edit Birthday</h2>
+<form method="post" class="edit-form">
+    <label for="">Name:</label><br>
+    <input type="text" name="name" value="{{ birthday.name }}" required><br><br>
+    <label for="">Birthday:</label><br>
+    <input type="date" name="birthday" value="{{ birthday.birthday }}" required><br><br>
+    <label for="">Notes (Optional):</label><br>
+    <textarea name="notes">{{ birthday.notes }}</textarea><br><br>
+    <button type="submit" class="edit-button-section">Save Changes</button>
+</form>
+<a href="{{ url_for('index') }}">← Back</a>
+{% endblock %}
